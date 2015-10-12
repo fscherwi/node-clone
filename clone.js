@@ -93,7 +93,7 @@ function clone(parent, circular, depth, prototype) {
         attrs = Object.getOwnPropertyDescriptor(proto, i);
       }
 
-      if (attrs && attrs.set === null) {
+      if (attrs && attrs.set == null) {
         continue;
       }
       child[i] = _clone(parent[i], depth - 1);
@@ -140,7 +140,7 @@ clone.__isArray = __isArray;
 
 function __isRegExp(o) {
   return typeof o === 'object' && __objToStr(o) === '[object RegExp]';
-};
+}
 clone.__isRegExp = __isRegExp;
 
 function __getRegExpFlags(re) {
